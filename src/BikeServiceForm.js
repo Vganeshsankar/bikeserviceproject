@@ -1,11 +1,13 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import { CreateBikeDetails } from './connect'
 import './Image.css'
 
 
 export let Register01=()=>
 {
-    
+    const navi=useNavigate(); 
     const[process,setProcess]=useState({
         "cusId":0,
         "cusBikeno":"",
@@ -29,9 +31,12 @@ export let Register01=()=>
         )
     }
 
-    const register=()=>
+    const register=async()=>
     {
-        alert('welcome to Zealous Service Center'+JSON.stringify(process))
+        // alert('welcome to Zealous Service Center'+JSON.stringify(process))
+        const temp=await CreateBikeDetails(process);
+        alert(temp.data);
+        navi("/listallbikedetails")
         
     }
     const reset=()=>
@@ -93,7 +98,7 @@ export let Register01=()=>
                     <div className="mt-3">
                                 <label className="form-label" >DateofPurchase</label>
                                 <input type="date"
-                                name="DateofPurchase"
+                                name="cusDateofpurchase"
                                 value={process.Dateofpurchase}
                                 onChange={track}
                                  className="form-control" />
