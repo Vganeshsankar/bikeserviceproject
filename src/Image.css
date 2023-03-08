@@ -1,0 +1,46 @@
+#center {
+    
+    background-image: linear-gradient(rgb(139, 230, 235),rgb(247, 247, 247),rgba(152, 123, 5, 0.979));
+   
+  }
+  #center1
+  {
+    background-image: url(../public/Images/Form2.jpg);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 67.9%;
+    height: 150px; 
+  }
+  #service
+  {
+    background-image: url(../public/Images/logo.png);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 31.3%;
+    height: 390px; 
+  }
+  #center2
+  {
+    background-image: linear-gradient(rgba(131, 8, 8, 0.97),rgb(4, 79, 76),rgba(73, 59, 0, 0.833));
+   -webkit-background-clip: text;
+   color: transparent;
+   text-decoration: underline rgb(37, 52, 4);
+  }
+#bc1
+{
+  background-color: orangered;
+}
+  #texting
+  {
+    color: rgb(239, 77, 23);
+    font-family: cursive;
+    font-style: italic;
+  }
+  #servicebg
+  {
+    background-image: linear-gradient(rgba(49, 5, 5, 0.97),rgb(241, 145, 71),rgba(242, 206, 63, 0.833));
+    -webkit-background-clip: text;
+    color: transparent;
+  }
