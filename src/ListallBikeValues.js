@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { DisplayAllbikevalues } from './connect';
+import { useNavigate } from 'react-router-dom';
+import { deletebybikedetails, DisplayAllbikevalues } from './connect';
 import './Image.css'
 export const ListallbikeDetails=()=>
 {
@@ -7,6 +8,7 @@ export const ListallbikeDetails=()=>
 
     const myvalues=async()=>
     {
+        const navi=useNavigate()
         const t=await DisplayAllbikevalues();
         setAllvalues(t.data);
     }
@@ -51,14 +53,14 @@ export const ListallbikeDetails=()=>
                                                         <td>
                                                         <a href={`updating/${data.cusId}`} className="btn btn-outline-primary">
                                                             Update</a>
-                                                            <button className="btn btn-outline-danger"// onClick={
-                                                                // async()=>
-                                                                // {
-                                                                //     const t=await delete();
-                                                                //     alert(t);
-                                                                //     navigator("/listallbikedetails")
-                                                                // }
-                                                            // }>
+                                                            <button className="btn btn-outline-danger"
+                                                            onClick={
+                                                                async()=>{
+                                                                    const temp=await deletebybikedetails(data.cusId)
+                                                                    alert(temp.data);
+                                                                    navi("/listallbikedetails")
+                                                                }  
+                                                            }
                                                             >
                                                                 delete
                                                             </button>
